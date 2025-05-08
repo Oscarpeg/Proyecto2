@@ -1,0 +1,53 @@
+Programa ::= sentencias
+
+sentencias ::= sentencia sentencias | ε
+
+sentencia ::= funcion | asignacion | print_stmt | if_stmt | while_stmt
+
+while_stmt ::= "while" expresion ":" bloque
+
+funcion ::= "def" id "(" parametros_opt ")" ":" bloque
+
+parametros_opt ::= parametros | ε
+parametros ::= id mas_parametros
+mas_parametros ::= "," id mas_parametros | ε
+
+asignacion ::= id "=" expresion
+
+print_stmt ::= "print" "(" argumentos_opt ")"
+
+argumentos_opt ::= argumentos | ε
+argumentos ::= expresion mas_argumentos
+mas_argumentos ::= "," expresion mas_argumentos | ε
+
+if_stmt ::= "if" expresion ":" bloque elif_bloques else_bloque_opt
+elif_bloques ::= elif_bloque elif_bloques | ε
+elif_bloque ::= "elif" expresion ":" bloque
+else_bloque_opt ::= "else" ":" bloque | ε
+
+bloque ::= nueva_linea indentado_sentencias | sentencia
+nueva_linea ::= "\\n"
+indentado_sentencias ::= indent sentencias dedent
+indent ::= "INDENT"
+dedent ::= "DEDENT"
+
+expresion ::= comparison | term
+
+comparison ::= expr comparison_op_expr_rep
+comparison_op_expr_rep ::= comparison_op expr comparison_op_expr_rep | ε
+comparison_op ::= "==" | "!=" | "<" | "<=" | ">" | ">="
+
+expr ::= term expr_rep
+
+expr_rep ::= "+" term expr_rep | "-" term expr_rep | ε
+
+term ::= factor term_rep
+
+term_rep ::= "*" factor term_rep | "/" factor term_rep | ε
+
+factor ::= id | numero | "(" expresion ")" | "not" factor | "-" factor
+
+id ::= [a-zA-Z_][a-zA-Z0-9_]*
+
+numero ::= [0-9]+
+

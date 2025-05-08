@@ -1,0 +1,275 @@
+{
+    "Programa": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "sentencias"
+        ],
+        "def": [
+            "sentencias"
+        ],
+        "if": [
+            "sentencias"
+        ],
+        "print": [
+            "sentencias"
+        ],
+        "while": [
+            "sentencias"
+        ],
+        "$": [
+            "sentencias"
+        ]
+    },
+    "sentencias": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "sentencia",
+            "sentencias"
+        ],
+        "def": [
+            "sentencia",
+            "sentencias"
+        ],
+        "if": [
+            "sentencia",
+            "sentencias"
+        ],
+        "print": [
+            "sentencia",
+            "sentencias"
+        ],
+        "while": [
+            "sentencia",
+            "sentencias"
+        ]
+    },
+    "sentencia": {
+        "def": [
+            "funcion"
+        ],
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "asignacion"
+        ],
+        "print": [
+            "print_stmt"
+        ],
+        "if": [
+            "if_stmt"
+        ],
+        "while": [
+            "while_stmt"
+        ]
+    },
+    "parametros_opt": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "parametros"
+        ]
+    },
+    "parametros": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "id",
+            "mas_parametros"
+        ]
+    },
+    "asignacion": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "id",
+            "=",
+            "expresion"
+        ]
+    },
+    "argumentos_opt": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "argumentos"
+        ],
+        "-": [
+            "argumentos"
+        ],
+        "[0-9]+": [
+            "argumentos"
+        ],
+        "not": [
+            "argumentos"
+        ],
+        "(": [
+            "argumentos"
+        ]
+    },
+    "argumentos": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "expresion",
+            "mas_argumentos"
+        ],
+        "-": [
+            "expresion",
+            "mas_argumentos"
+        ],
+        "[0-9]+": [
+            "expresion",
+            "mas_argumentos"
+        ],
+        "not": [
+            "expresion",
+            "mas_argumentos"
+        ],
+        "(": [
+            "expresion",
+            "mas_argumentos"
+        ]
+    },
+    "elif_bloques": {
+        "elif": [
+            "elif_bloque",
+            "elif_bloques"
+        ]
+    },
+    "bloque": {
+        "\\\\n": [
+            "nueva_linea",
+            "indentado_sentencias"
+        ],
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "sentencia"
+        ],
+        "def": [
+            "sentencia"
+        ],
+        "if": [
+            "sentencia"
+        ],
+        "print": [
+            "sentencia"
+        ],
+        "while": [
+            "sentencia"
+        ]
+    },
+    "indentado_sentencias": {
+        "INDENT": [
+            "indent",
+            "sentencias",
+            "dedent"
+        ]
+    },
+    "expresion": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "term"
+        ],
+        "-": [
+            "term"
+        ],
+        "[0-9]+": [
+            "term"
+        ],
+        "not": [
+            "term"
+        ],
+        "(": [
+            "term"
+        ]
+    },
+    "comparison": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "-": [
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "[0-9]+": [
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "not": [
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "(": [
+            "expr",
+            "comparison_op_expr_rep"
+        ]
+    },
+    "comparison_op_expr_rep": {
+        "==": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        ">=": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "<=": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "!=": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        "<": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ],
+        ">": [
+            "comparison_op",
+            "expr",
+            "comparison_op_expr_rep"
+        ]
+    },
+    "expr": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "term",
+            "expr_rep"
+        ],
+        "-": [
+            "term",
+            "expr_rep"
+        ],
+        "[0-9]+": [
+            "term",
+            "expr_rep"
+        ],
+        "not": [
+            "term",
+            "expr_rep"
+        ],
+        "(": [
+            "term",
+            "expr_rep"
+        ]
+    },
+    "term": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "factor",
+            "term_rep"
+        ],
+        "-": [
+            "factor",
+            "term_rep"
+        ],
+        "[0-9]+": [
+            "factor",
+            "term_rep"
+        ],
+        "not": [
+            "factor",
+            "term_rep"
+        ],
+        "(": [
+            "factor",
+            "term_rep"
+        ]
+    },
+    "factor": {
+        "[a-zA-Z_][a-zA-Z0-9_]*": [
+            "id"
+        ],
+        "[0-9]+": [
+            "numero"
+        ]
+    }
+}
